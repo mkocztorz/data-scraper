@@ -1,6 +1,8 @@
 # data-scraper
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/big.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
 
+I will make it available on packagist and add more docs soon!  
+
 ## What is it?
 Data scraper is based on great Symfony DomCrawler component. Symfony\Component\DomCrawler\Crawler is expected as an input to data scraper.
 
