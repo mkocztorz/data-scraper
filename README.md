@@ -20,10 +20,12 @@ The main entry point to data scraper is \Mkocztorz\DataScraper\Extractor\Extract
 There is also \Mkocztorz\DataScraper\Html\SelectorProviderBase that helps to register and use the selectors. There is also a ready to use version \Mkocztorz\DataScraper\Std\SelectorProvider with the default Css selector registered. Most of the time, while working with data scraper, selector provider and selector objects will be transparent for you. The Std Extractor by default uses Std SelectorProvider.
  
 You may consider working with data scraper as 2 step job:
+
 1. Create a formula that describes where in the HTML is the data you want to scrape and what method should be used (e.g. is it element's text or attribute).
+
 2. Apply the formula created in step 1 to the HTML. 
 
-You don't need to create the formula for every HTML you want so scrape. If for example you want to scrape a paginated list of items or user profiles then you only need to create the formula once and then apply it to every page of the results or user profile.
+You don't need to create the formula for every HTML you want so scrape. If for example you want to scrape a paginated lists of items or user profiles then you only need to create the formula once and then apply it to every page of the results or user profile.
 
 ## Build in goodies
 ### Extraction Methods
@@ -52,7 +54,7 @@ Usage:
 $extractor->getText('#title');
 ```
 
-Will: get the text from element with title ID.
+Will: get the text from element with id="title".
 
 Note: It will use the first element found using css selector.
  
@@ -80,6 +82,7 @@ If element or attribute not found: returns empty string.
 
 #### List of elements
 **NOTE: This extraction method is different from the previous ones**
+
 Class: ExtractList
 
 Registered as: list
@@ -124,7 +127,7 @@ If list is empty: None of child ExtractMethods are executed and the result is em
 How it works and how it can be extended to your needs. 
 
 
-More docs coming soon. Just code example for now:
+More docs coming soon.
 
 ## Example
 ``` php
