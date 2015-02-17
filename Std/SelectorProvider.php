@@ -10,4 +10,4 @@ class SelectorProvider extends SelectorProviderBase
     {
         $this->registerSelector('css', '\Mkocztorz\DataScraper\Html\Selector\Css', true);
     }
-} 
+}

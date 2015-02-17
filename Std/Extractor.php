@@ -2,7 +2,6 @@
 
 namespace Mkocztorz\DataScraper\Std;
 
-use Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface;
 use Mkocztorz\DataScraper\Extractor\ExtractorBase;
 
 /**
@@ -12,9 +11,9 @@ use Mkocztorz\DataScraper\Extractor\ExtractorBase;
  * This is a shortcut class to Extractor class. Registers all default extract methods shipped with lib.
  * To extend use this class or Extractor.
  *
- * @method ExtractionMethodInterface getText
- * @method ExtractionMethodInterface getList
- * @method ExtractionMethodInterface getAttribute
+ * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getText
+ * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getList
+ * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getAttribute
  */
 class Extractor extends ExtractorBase
 {
@@ -26,4 +25,4 @@ class Extractor extends ExtractorBase
         $this->registerMethod('list', '\Mkocztorz\DataScraper\Extractor\Method\ExtractList');
         $this->registerMethod('attribute', '\Mkocztorz\DataScraper\Extractor\Method\ExtractAttribute');
     }
-} 
+}

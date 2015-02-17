@@ -3,7 +3,6 @@ namespace Mkocztorz\DataScraper\Extractor\Method;
 
 use Mkocztorz\DataScraper\Exception\InvalidPropertiesRuntimeException;
 use Mkocztorz\DataScraper\Extractor\ExtractionMethod;
-use Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
 class ExtractElementText extends ExtractionMethod
@@ -33,6 +32,4 @@ class ExtractElementText extends ExtractionMethod
             );
         }
     }
-
-
 }

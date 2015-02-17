@@ -16,4 +16,4 @@ interface SelectorInterface
      * @return Crawler
      */
     public function filterFirstElement(Crawler $crawler);
-} 
+}
