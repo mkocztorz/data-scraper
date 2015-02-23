@@ -35,7 +35,7 @@ You may consider working with data scraper as 2 step job:
 
 You don't need to create the formula for every HTML you want so scrape. If for example you want to scrape a paginated lists of items or user profiles then you only need to create the formula once and then apply it to every page of the results or user profile.
 
-## Build in goodies
+## Built in methods
 ### Extraction Methods
 Default extraction methods are in \Mkocztorz\DataScraper\Extractor\Method namespace.
 Examples below assume creating Extractor service first:
