@@ -147,7 +147,15 @@ abstract class ExtractionMethod implements ExtractionMethodInterface
 
     protected function guardAgainstInvalidPattern()
     {
-        if (@preg_match($this->getProperty('pattern'), '') === false) {
+        try {
+            //just testing the pattern
+            $res = preg_match($this->getProperty('pattern'), '');
+        }
+        catch(\Exception $e) {
+            $res = false;
+        }
+
+        if ( $res === false) {
             throw new InvalidPropertiesRuntimeException(
                 sprintf("Invalid pattern %s", $this->getProperty('pattern')),
                 InvalidPropertiesRuntimeException::CODE_INVALID_PATTERN
