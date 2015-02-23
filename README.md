@@ -62,6 +62,28 @@ Note: It will use the first element found using css selector.
  
 If element not found: returns empty string.
 
+#### Element's text with pattern
+Class: ExtractElementTextPattern
+
+Registered as: textPattern
+
+Extractor method: getTextPattern
+
+Params: ['pattern'=>The pattern containing ?P<value> named subpattern]
+
+Usage:
+```php
+$extractor->getText('#title', ['pattern'=>'/UID-(?P<value>\d+)/']);
+```
+
+Will: get the value matching pattern in text from element with id="title".
+
+Note: It will use the first element found using css selector.
+
+Note: Pattern has to have ?P<value> named subpattern.
+ 
+If element not found or pattern matches nothing: returns empty string.
+
 #### Element's attribute value
 Class: ExtractAttribute
 
@@ -81,6 +103,26 @@ Will: get the age attribute value from element with title ID.
 Note: It will use the first element found using css selector.
  
 If element or attribute not found: returns empty string.
+
+#### Element's attribute value with pattern
+Class: ExtractAttributePattern
+
+Registered as: attributePattern
+
+Extractor method: getAttributePattern
+
+Params: ['attr'=>attribute name, 'pattern'=>The pattern containing ?P<value> named subpattern]
+
+Usage:
+```php
+$extractor->getAttribute('#title', ['attr'=>'id', 'pattern'=>'/user-(?P<value>\d+)/']);
+```
+
+Will: get the value matching pattern in id attribute from element with title ID.
+
+Note: It will use the first element found using css selector.
+ 
+If element or attribute not found or pattern matches nothing: returns empty string.
 
 #### List of elements
 **NOTE: This extraction method is different from the previous ones**
