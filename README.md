@@ -1,7 +1,13 @@
 # data-scraper
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/small.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
 
-I will make it available on packagist and add more docs soon!  
+## Install
+Install using composer:
+```
+composer require mkocztorz/data-scraper
+```
+
+Currently minimum stability is alpha.
 
 ## What is it?
 Data scraper is based on great Symfony DomCrawler component. Symfony\Component\DomCrawler\Crawler is expected as an input to data scraper.
@@ -14,7 +20,7 @@ Data scraper allows extracting a single value or an array of values. It allows s
 It is not a web spider - it doesn't do any web requests - that's up to you. It doesn't care what is the source of the HTML.
 
 ## Learn by example
-For those who want to dive right into it, please visit this tutorial: (coming soon) or take a look at the example at the bottom.
+For those who want to dive right into it, please visit [this tutorial](https://docs.google.com/a/polcode.pl/presentation/d/1V5fIp5LkvWqvNDS4qYgOhXY4tStsgDp5cRNF8d-baM4/edit#slide=id.g79b793077_211) or take a look at the example at the bottom.
 
 ## Working with data scraper
 The main entry point to data scraper is \Mkocztorz\DataScraper\Extractor\ExtractorBase. This is a service class where the extraction methods are registered and used. But you're much more likely to use the \Mkocztorz\DataScraper\Std\Extractor that has all the standard extraction methods registered by default.
