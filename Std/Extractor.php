@@ -14,6 +14,8 @@ use Mkocztorz\DataScraper\Extractor\ExtractorBase;
  * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getText
  * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getList
  * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getAttribute
+ * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getTextPattern
+ * @method \Mkocztorz\DataScraper\Extractor\ExtractionMethodInterface getAttributePattern
  */
 class Extractor extends ExtractorBase
 {
@@ -24,5 +26,7 @@ class Extractor extends ExtractorBase
         $this->registerMethod('text', '\Mkocztorz\DataScraper\Extractor\Method\ExtractElementText');
         $this->registerMethod('list', '\Mkocztorz\DataScraper\Extractor\Method\ExtractList');
         $this->registerMethod('attribute', '\Mkocztorz\DataScraper\Extractor\Method\ExtractAttribute');
+        $this->registerMethod('textPattern', '\Mkocztorz\DataScraper\Extractor\Method\ExtractElementTextPattern');
+        $this->registerMethod('attributePattern', '\Mkocztorz\DataScraper\Extractor\Method\ExtractAttributePattern');
     }
 }

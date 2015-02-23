@@ -4,10 +4,9 @@ namespace Mkocztorz\DataScraper\Extractor\Method;
 
 
 use Mkocztorz\DataScraper\Exception\InvalidPropertiesRuntimeException;
-use Mkocztorz\DataScraper\Extractor\ExtractionMethod;
 use Symfony\Component\DomCrawler\Crawler;
 
-class ExtractAttribute extends ExtractionMethod
+class ExtractElementTextPattern extends ExtractElementText
 {
     /**
      * @param Crawler $crawler
@@ -15,24 +14,27 @@ class ExtractAttribute extends ExtractionMethod
      */
     public function extract(Crawler $crawler)
     {
-        $element = $this->getFirstElement($crawler);
-        return $this->getAttributeValue($element, $this->getProperty('attr'));
+        $value = parent::extract($crawler);
+        return $this->matchPattern($value, $this->getProperty('pattern'));
     }
 
     protected function guardAgainstInvalidProperties()
     {
         $properties = $this->getProperties();
         $this->guardAgainstParamsNotArray();
-        $this->guardAgainstMissingProperty('attr');
+        $this->guardAgainstMissingProperty('pattern');
+
+        $this->guardAgainstInvalidPattern();
 
         /*
-         * Params have to be array with 1 value
+         * Params have to be empty array
          */
-        if (count($properties)!=1) {
+        if (count($properties) != 1) {
             throw new InvalidPropertiesRuntimeException(
-                "Properties for ExtractAttribute should contain only 'attr'",
+                "Properties for ExtractElementText contains unexpected value",
                 InvalidPropertiesRuntimeException::CODE_UNEXPECTED_VALUE
             );
         }
     }
+
 }

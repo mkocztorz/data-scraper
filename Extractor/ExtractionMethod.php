@@ -47,6 +47,24 @@ abstract class ExtractionMethod implements ExtractionMethodInterface
     }
 
     /**
+     * @param string $prop
+     * @return mixed
+     */
+    protected function getProperty($prop)
+    {
+        return $this->properties[$prop];
+    }
+
+    /**
+     * @param string $prop
+     * @return bool
+     */
+    protected function isProperty($prop)
+    {
+        return isset($this->properties[$prop]);
+    }
+
+    /**
      * @param Crawler $crawler
      * @return Crawler
      */
@@ -98,6 +116,41 @@ abstract class ExtractionMethod implements ExtractionMethodInterface
             throw new InvalidPropertiesRuntimeException(
                 "Paremeters should be an array",
                 InvalidPropertiesRuntimeException::CODE_EXPECTED_ARRAY
+            );
+        }
+    }
+
+    /**
+     * @param string $propertyName
+     */
+    protected function guardAgainstMissingProperty($propertyName)
+    {
+        if (!$this->isProperty($propertyName)) {
+            throw new InvalidPropertiesRuntimeException(
+                sprintf("The property %s is missing", $propertyName),
+                InvalidPropertiesRuntimeException::CODE_EXPECTED_VALUE_MISSING
+            );
+        }
+    }
+
+    /**
+     * @param string $value
+     * @param string $pattern
+     * @return string
+     */
+    protected function matchPattern($value, $pattern)
+    {
+        $matches = array();
+        preg_match($pattern, $value, $matches);
+        return isset($matches['value']) ? $matches['value'] : '';
+    }
+
+    protected function guardAgainstInvalidPattern()
+    {
+        if (@preg_match($this->getProperty('pattern'), '') === false) {
+            throw new InvalidPropertiesRuntimeException(
+                sprintf("Invalid pattern %s", $this->getProperty('pattern')),
+                InvalidPropertiesRuntimeException::CODE_INVALID_PATTERN
             );
         }
     }
