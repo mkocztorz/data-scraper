@@ -79,7 +79,7 @@ Params: ['pattern'=>The pattern containing ?P<value> named subpattern]
 
 Usage:
 ```php
-$extractor->getText('#title', ['pattern'=>'/UID-(?P<value>\d+)/']);
+$extractor->getTextPattern('#title', ['pattern'=>'/UID-(?P<value>\d+)/']);
 ```
 
 Will: get the value matching pattern in text from element with id="title".
@@ -121,7 +121,7 @@ Params: ['attr'=>attribute name, 'pattern'=>The pattern containing ?P<value> nam
 
 Usage:
 ```php
-$extractor->getAttribute('#title', ['attr'=>'id', 'pattern'=>'/user-(?P<value>\d+)/']);
+$extractor->getAttributePattern('#title', ['attr'=>'id', 'pattern'=>'/user-(?P<value>\d+)/']);
 ```
 
 Will: get the value matching pattern in id attribute from element with title ID.
