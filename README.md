@@ -1,5 +1,5 @@
 # data-scraper
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/small.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/big.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
 
 ## Install
 Install using composer:
@@ -79,7 +79,7 @@ Params: ['pattern'=>The pattern containing ?P<value> named subpattern]
 
 Usage:
 ```php
-$extractor->getText('#title', ['pattern'=>'/UID-(?P<value>\d+)/']);
+$extractor->getTextPattern('#title', ['pattern'=>'/UID-(?P<value>\d+)/']);
 ```
 
 Will: get the value matching pattern in text from element with id="title".
@@ -121,7 +121,7 @@ Params: ['attr'=>attribute name, 'pattern'=>The pattern containing ?P<value> nam
 
 Usage:
 ```php
-$extractor->getAttribute('#title', ['attr'=>'id', 'pattern'=>'/user-(?P<value>\d+)/']);
+$extractor->getAttributePattern('#title', ['attr'=>'id', 'pattern'=>'/user-(?P<value>\d+)/']);
 ```
 
 Will: get the value matching pattern in id attribute from element with title ID.
