@@ -1,5 +1,5 @@
 # data-scraper
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/small.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/big.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
 
 ## Install
 Install using composer:
