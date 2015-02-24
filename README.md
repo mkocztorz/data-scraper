@@ -1,6 +1,6 @@
 # data-scraper
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2/big.png)](https://insight.sensiolabs.com/projects/0b73e8c2-6bbf-4c4e-a6f7-1763bf5b9fa2)
-
+[![Build Status](https://travis-ci.org/mkocztorz/data-scraper.svg?branch=master)](https://travis-ci.org/mkocztorz/data-scraper)
 ## Install
 Install using composer:
 ```
